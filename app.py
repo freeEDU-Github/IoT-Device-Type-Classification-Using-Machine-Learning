@@ -31,11 +31,13 @@ st.markdown("**Data Preprocessing**")
 st.write("The dataset will undergo to data preprocessing. Since the dataset has 298 features, XGBoost "
          "feature importance has been used to know which features have a larger effect on the model.")
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.columns([1,6,1])
 
 with col2:
     image1 = Image.open('feature.png')
-    st.image(image1, caption='Top 5 most and least important feature')
+    st.image(image1, caption='Top 5 most and least important features')
+
+st.write("The top 5 most important features are http_time_avg, ttl_avg, packet_inter_arrivel_B_firstQ, packet_inter_arrivel_A_sum, and packet_inter_arrivel_B_min. These features will be used for our data modeling.")
 
 st.markdown("**Extreme Gradient Boosting Classifier Model (XGBoost Classifier)**")
 
