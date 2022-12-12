@@ -13,11 +13,11 @@ data_set = pd.read_csv("final.csv")
 data_sample = pd.read_csv("sample_data.csv")
 
 #Text
-st.markdown("<h1 style='text-align: center;'>IoT Device Type Identification Demo</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>IoT Device Type Identification Using Machine Learning</h1>", unsafe_allow_html=True)
 
-st.markdown("***")
+image = Image.open('IoT.png')
+st.image(image)
 
-st.header("IoT Device Type Identification Using Machine Learning")
 st.markdown("IoT Device Type Identification Using Machine Learning aims to test Extreme Gradient Boosting Classifier (XGBoost Classifier) to determine the model in terms of accuracy on testing and validation data.")
 
 st.markdown("***")
@@ -34,8 +34,27 @@ st.write("The dataset will undergo to data preprocessing. Since the dataset has 
 col1, col2, col3 = st.columns(3)
 
 with col2:
-    image = Image.open('feature.png')
-    st.image(image, caption='Top 5 most and least important feature')
+    image1 = Image.open('feature.png')
+    st.image(image1, caption='Top 5 most and least important feature')
+
+st.markdown("**Extreme Gradient Boosting Classifier Model (XGBoost Classifier)**")
+
+st.write("The experimental results demonstrate that XGBoost Classifier model has an accuracy of 98.00% on training data and 77.00% on validation data. "
+         "The model performs well in terms of accuracy. "
+         "It has been found that this model's functionalities are working as intended.")
+
+col1, col2, col3 = st.columns([1,6,1])
+
+with col1:
+    st.write("")
+
+with col2:
+    image1 = Image.open('accuracy.png')
+    st.image(image1, caption='Confusion Matrix of XGBoost Classifier Model')
+
+with col3:
+    st.write("")
+
 
 st.markdown("***")
 
@@ -51,12 +70,12 @@ st.text(
 )
 st.dataframe(data_sample)
 
-#Create a user input for each of our data set's five features. Set the decimal places into 4
-http_time_avg = st.number_input("HTTP Time Average", step=1e-5, format="%.4f")
-ttl_avg = st.number_input("TTL Average", step=1e-5, format="%.4f")
-packet_inter_arrivel_B_firstQ = st.number_input("Packet Arrival Time B First", step=1e-5, format="%.4f")
-packet_inter_arrivel_A_sum = st.number_input("Summation of Packet Arrival Time A", step=1e-5, format="%.4f")
-packet_inter_arrivel_B_min = st.number_input("Minimum Packet Arrival Time B", step=1e-5, format="%.4f")
+#Create a user input for each of our data set's five features. Set the decimal places into 10
+http_time_avg = st.number_input("HTTP Time Average", step=1e-10, format="%.9f")
+ttl_avg = st.number_input("TTL Average", step=1e-10, format="%.9f")
+packet_inter_arrivel_B_firstQ = st.number_input("Packet Arrival Time B First", step=1e-10, format="%.9f")
+packet_inter_arrivel_A_sum = st.number_input("Summation of Packet Arrival Time A", step=1e-10, format="%.9f")
+packet_inter_arrivel_B_min = st.number_input("Minimum Packet Arrival Time B", step=1e-10, format="%.9f")
 
 #Assign our 5 features to variable 'features'
 features = ['http_time_avg', 'ttl_avg', 'packet_inter_arrivel_B_firstQ', 'packet_inter_arrivel_A_sum',
