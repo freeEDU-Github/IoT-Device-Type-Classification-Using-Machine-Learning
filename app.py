@@ -27,9 +27,7 @@ st.markdown("**Dataset**")
 st.write("The dataset for this project is available at shorturl.at/nqY08. It consists 298 columns and 1000 rows.")
 
 st.markdown("**Data Preprocessing**")
-
-st.write("The dataset will undergo to data preprocessing. Since the dataset has 298 features, XGBoost "
-         "feature importance has been used to know which features have a larger effect on the model.")
+st.markdown('<div style="text-align: justify;">The dataset will undergo to data preprocessing. Since the dataset has 298 features, XGBoost feature importance has been used to know which features have a larger effect on the model.</div>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([1,6,1])
 
@@ -37,13 +35,12 @@ with col2:
     image1 = Image.open('feature.png')
     st.image(image1, caption='Top 5 most and least important features')
 
-st.write("The top 5 most important features are http_time_avg, ttl_avg, packet_inter_arrivel_B_firstQ, packet_inter_arrivel_A_sum, and packet_inter_arrivel_B_min. These features will be used for our data modeling.")
+st.markdown('<div style="text-align: justify;">The top 5 most important features are http_time_avg, ttl_avg, packet_inter_arrivel_B_firstQ, packet_inter_arrivel_A_sum, and packet_inter_arrivel_B_min. These features will be used for our data modeling.</div>', unsafe_allow_html=True)
+
+st.markdown("***")
 
 st.markdown("**Extreme Gradient Boosting Classifier Model (XGBoost Classifier)**")
-
-st.write("The experimental results demonstrate that XGBoost Classifier model has an accuracy of 98.00% on training data and 77.00% on validation data. "
-         "The model performs well in terms of accuracy. "
-         "It has been found that this model's functionalities are working as intended.")
+st.markdown('<div style="text-align: justify;">The experimental results demonstrate that XGBoost Classifier model has an accuracy of 98.00% on training data and 77.00% on validation data. The model performs well in terms of accuracy. It has been found that the functionalities of the model are working as intended.</div>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([1,6,1])
 
