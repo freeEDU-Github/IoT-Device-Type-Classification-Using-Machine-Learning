@@ -57,7 +57,7 @@ with col3:
 
 st.markdown("***")
 
-st.subheader("Prediction")
+st.subheader("IoT Device Type Identification Demo")
 st.write("You can test the sample data below")
 st.markdown(" **Features of our data:** ")
 st.text(
